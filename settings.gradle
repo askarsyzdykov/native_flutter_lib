@@ -1,0 +1,8 @@
+include ':app', ':library'
+rootProject.name = 'NativeLibrary'
+
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+        settingsDir,
+        'flutter_library/.android/include_flutter.groovy'
+))
