@@ -1,8 +1,9 @@
 package kz.team.nativelibrary
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 import kz.team.library.LibraryActivity
 
 class MainActivity : AppCompatActivity() {
@@ -11,6 +12,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        startActivity(Intent(this, LibraryActivity::class.java))
+        button.setOnClickListener {
+            startActivity(Intent(this, LibraryActivity::class.java))
+        }
     }
 }
