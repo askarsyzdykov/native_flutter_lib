@@ -40,6 +40,7 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation project(path: ":flutter")
+//    implementation project(":flutter")
+    embed project(path: ":flutter", configuration: "default")
     embed project(path: ":vibrate", configuration: "default")
 }

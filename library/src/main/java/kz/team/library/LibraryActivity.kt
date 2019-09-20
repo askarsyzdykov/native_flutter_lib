@@ -1,5 +1,6 @@
 package kz.team.library
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -19,10 +20,11 @@ class LibraryActivity : AppCompatActivity() {
         )
         setContentView(flutterView)
 
-        MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
+        MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, _ ->
             if (call.method == "return_value") {
                 val value = call.argument<Int>("value")
-                Toast.makeText(this, value.toString(), Toast.LENGTH_SHORT).show()
+
+                setResult(RESULT_OK, Intent().putExtra("value", value))
                 finish()
             }
         }
